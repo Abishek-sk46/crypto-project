@@ -1,5 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+
+# Create a folder to save plots
+os.makedirs("../reports/figures", exist_ok=True)
 
 # Load processed data
 btc_df = pd.read_csv("../data/processed/BTC_features.csv")
@@ -32,6 +36,7 @@ plt.ylabel("Price (USD)")
 plt.legend()
 plt.grid()
 plt.tight_layout()
+plt.savefig("../reports/figures/btc_eth_price_trend.png")
 plt.show()
 
 # --- Plot 2: Daily % Change Distribution ---
@@ -43,6 +48,7 @@ plt.xlabel("Daily % Change")
 plt.ylabel("Frequency")
 plt.legend()
 plt.tight_layout()
+plt.savefig("../reports/figures/daily_change_distribution.png")
 plt.show()
 
 # --- Plot 3: BTC Moving Averages ---
@@ -56,6 +62,7 @@ plt.ylabel("Price (USD)")
 plt.legend()
 plt.grid()
 plt.tight_layout()
+plt.savefig("../reports/figures/btc_moving_averages.png")
 plt.show()
 
 # --- Extra Insight: Correlation between BTC & ETH ---
